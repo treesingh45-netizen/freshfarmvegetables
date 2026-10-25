@@ -1,0 +1,1195 @@
+Fresh Farm Vegetables — Professional E-Commerce Website Development Prompt
+
+Project Brief
+
+Act as a senior full-stack e-commerce developer, UI/UX designer, and conversion optimization specialist. Design and build a complete, production-ready e-commerce web application for Fresh Farm Vegetables, a premium fresh vegetable supplier based in DHA Phase 6, Lahore, Pakistan.
+
+Use https://freshbasket.com.pk/ as a reference for the shopping experience, product-grid organization, category navigation, cart interactions, and clean grocery-commerce interface. Create an original design tailored to Fresh Farm Vegetables; do not copy the reference website's branding, exact layouts, text, or proprietary assets.
+
+The website must combine a modern online shopping experience with the business's specialty in iceberg lettuce, vacuum-packed lettuce, local vegetables, imported vegetables, and supply services for restaurants, hotels, cafés, and professional kitchens.
+
+The final result should look like a real, established vegetable supply brand rather than a generic template or an AI-generated mockup.
+
+1. Business Information
+
+Business name: Fresh Farm Vegetables
+
+Brand tagline: Premium Quality, Farm-Fresh Produce for Professional Kitchens
+
+Primary specialty:
+
+Fresh iceberg lettuce
+
+Vacuum-packed lettuce
+
+Business address: Commercial CCA, Phase 6, Defence Housing Authority (DHA), Lahore, Pakistan
+
+Phone / WhatsApp: 0333-4934403
+
+WhatsApp international number: +923334934403
+
+Email provided: Fresh Farm Vegetables@gmail.com — verify the exact email address before publishing.
+
+Social platforms: Instagram and Facebook
+
+Mobile applications: The business indicates that apps are available on Google Play Store and Apple App Store. Add the official download links once supplied and verified.
+
+Primary target customers:
+
+Restaurants
+
+Hotels
+
+Cafés
+
+Catering companies
+
+Commercial kitchens
+
+Food-service businesses
+
+Individual customers, if retail ordering is supported
+
+Important business rule: Product rates fluctuate daily according to market prices. Never display invented prices, fabricated discounts, false stock availability, fake customer reviews, or unverified delivery promises.
+
+2. Design System and Brand Identity
+
+Create a premium, fresh, modern, and minimalist visual identity.
+
+Color palette
+
+Primary leaf green: #12B326
+
+Vibrant accent green: #16C72E
+
+Deep forest green: #0F5338
+
+Dark green: #003B22
+
+Soft background: #F6F8F6
+
+White: #FFFFFF
+
+Tomato-red accent: #E4483D
+
+Primary text: #202820
+
+Secondary text: #687268
+
+Borders: #E4EAE4
+
+Use bright green for primary action buttons and selected navigation states, deep forest green for branding and promotional sections, and white or soft neutral backgrounds for product listings.
+
+The red accent should be used sparingly.
+
+Typography
+
+Use a professional sans-serif typeface such as Inter, Outfit, or Poppins.
+
+Typography must have:
+
+Clear heading hierarchy
+
+Bold but tasteful section headings
+
+Comfortable paragraph spacing
+
+Highly readable product names and prices
+
+Strong contrast on buttons and navigation
+
+Consistent font sizes across desktop and mobile
+
+UI styling
+
+Rounded cards with approximately 16–24px corner radii
+
+Clean product imagery
+
+Subtle borders and restrained shadows
+
+Spacious page layouts
+
+Consistent spacing and alignment
+
+Smooth but understated transitions
+
+Professional icons
+
+Consistent button heights and input styling
+
+Avoid excessive animations, unnecessary gradients, cluttered content, oversized emojis, generic illustrations, and decorative elements that distract from the products.
+
+Logo usage
+
+Use the approved Fresh Farm Vegetables logo and its lettuce-and-tomato symbol. Keep the logo proportions correct. Use the symbol-only version where space is limited, such as the mobile header, favicon, and app icon.
+
+Do not recreate or distort the supplied logo.
+
+3. Header and Navigation
+
+Build a clean, professional, responsive header with the following structure.
+
+Main navigation bar
+
+Left section:
+
+Fresh Farm Vegetables logo
+
+Clicking the logo returns to the homepage
+
+Center section:
+
+A rounded search input with a search icon
+
+Placeholder: "Search fresh vegetables..."
+
+Search suggestions and matching products as the customer types
+
+Right section:
+
+Delivery location selector, where applicable
+
+Account or sign-in icon
+
+Wishlist icon, if supported
+
+Shopping cart icon
+
+Cart item-count badge
+
+Prominent "Request Today's Rates" action
+
+Use green as the primary navigation color while maintaining enough contrast and whitespace.
+
+On smaller screens, make the header compact and intuitive. Keep search, account access, and cart functionality easy to find.
+
+Category navigation ribbon
+
+Create a responsive navigation ribbon with suitable line icons and category labels:
+
+All Products
+
+Local Vegetables
+
+Imported Vegetables
+
+Iceberg Lettuce
+
+Vacuum-Packed Lettuce
+
+Bestsellers
+
+Wholesale Supply
+
+Use horizontally scrollable navigation on mobile.
+
+Do not add unrelated categories such as electronics, clothing, or general grocery departments that the business does not supply.
+
+4. Homepage Design
+
+Create a visually strong homepage that introduces the business, showcases its products, and directs visitors toward purchasing or requesting current rates.
+
+Section A: Hero banner
+
+Create a large, premium hero section with rounded corners, realistic photographs of fresh iceberg lettuce, tomatoes, and other vegetables, and a clean text layout.
+
+Headline:
+
+Fresh Vegetables. Reliable Supply. Every Day.
+
+Supporting text:
+
+"Premium-quality fresh local and imported vegetables for restaurants, hotels, cafés, and professional kitchens in Lahore."
+
+Highlight:
+
+Specialists in Iceberg & Vacuum-Packed Lettuce
+
+Primary CTA: Explore Our Products
+
+Secondary CTA: Get Today's Rates on WhatsApp
+
+Use genuine business photography where available. Until then, use high-quality, relevant produce photography.
+
+The banner should feel premium and professional, not like a discount supermarket advertisement.
+
+Section B: Business value propositions
+
+Create four clean service highlights:
+
+Fresh Produce — A selection of fresh local and imported vegetables.
+
+Lettuce Specialists — Dedicated emphasis on iceberg and vacuum-packed lettuce.
+
+Business Supply — Products for restaurants, hotels, and commercial kitchens.
+
+Convenient Ordering — Contact the supplier for current prices, availability, and ordering arrangements.
+
+Use minimal icons with short descriptions. Do not make unsupported certifications, sourcing guarantees, or delivery claims.
+
+Section C: Featured products
+
+Feature the following products prominently:
+
+Iceberg Lettuce
+
+Vacuum-Packed Lettuce
+
+Tomatoes
+
+Green Capsicum
+
+Cherry Tomatoes
+
+Romaine Lettuce
+
+Broccoli
+
+Cucumbers
+
+Use professional product cards with consistent photographic sizing.
+
+Each card should display:
+
+Product image
+
+Product name
+
+Local or imported category
+
+Package or weight options, when confirmed
+
+Current price, if configured
+
+Stock status, if verified
+
+Quantity selector, where applicable
+
+"Add to Cart" button, when ordering is supported
+
+"Request Price" button for unpriced or quote-based products
+
+For the two lettuce specialties, use distinctive but restrained visual emphasis.
+
+Section D: Browse by category
+
+Create a visually appealing category grid featuring:
+
+Local Vegetables
+
+Everyday fresh vegetables for commercial and household kitchens.
+
+Imported Vegetables
+
+Selected imported vegetable varieties and specialty produce.
+
+Lettuce Collection
+
+Iceberg, vacuum-packed, romaine, and lolo rose lettuce.
+
+Each category card should have an appropriate image, a concise description, and a working link to its filtered product collection.
+
+Section E: Wholesale supply
+
+Use a full-width dark forest green section with a professional produce image.
+
+Headline:
+
+Your Trusted Partner for Fresh Produce
+
+Description:
+
+"Looking for a dependable vegetable supplier for your restaurant, hotel, or professional kitchen? Contact Fresh Farm Vegetables to discuss your requirements, order quantities, and today's market rates."
+
+Buttons:
+
+Request a Wholesale Quote
+
+Contact Us on WhatsApp
+
+Direct visitors to the wholesale inquiry form or a WhatsApp conversation.
+
+Section F: App promotion
+
+Create a polished mobile-app promotion section with a smartphone mockup displaying the Fresh Farm Vegetables product catalog.
+
+Headline:
+
+Fresh Produce, Convenient Ordering
+
+Supporting copy:
+
+"Explore our vegetable collection and connect with Fresh Farm Vegetables through our mobile shopping experience."
+
+Show Google Play and Apple App Store badges using the official store links and app artwork.
+
+Never invent download links or imply a link works until it has been verified.
+
+Section G: Contact call to action
+
+Display the phone number, WhatsApp action, and Lahore business location.
+
+Use a clean background and a clear heading:
+
+Let's Talk About Your Fresh Produce Requirements
+
+Button: Contact Fresh Farm Vegetables
+
+5. Complete Product Catalog
+
+Build a dedicated product listing page with functional search, category filtering, sorting, and responsive product cards.
+
+Category 1: Fresh Local Produce
+
+Tomatoes
+
+Onions
+
+Red Carrots
+
+Orange Carrots
+
+Green Capsicum
+
+Garlic
+
+Ginger
+
+Iceberg Lettuce
+
+Cabbage
+
+Lemons
+
+Broccoli
+
+Potatoes
+
+Coriander
+
+Cucumbers
+
+Green Chillies
+
+Category 2: Imported Vegetables
+
+Red Capsicum
+
+Yellow Capsicum
+
+Cherry Tomatoes
+
+Rocket (Arugula)
+
+Parsley
+
+Basil Leaves
+
+Leeks
+
+Lolo Rose Lettuce
+
+Celery Leaves
+
+Romaine Lettuce
+
+Mushrooms
+
+Rosemary
+
+Product listing controls
+
+Provide:
+
+Search by product name
+
+Filter by local or imported produce
+
+Filter by product category
+
+Sort by name
+
+Sort by price when prices are configured
+
+Stock availability filter when live inventory is supported
+
+Clear filters control
+
+Helpful empty-search results
+
+Product card design
+
+Each card should include:
+
+High-resolution product image
+
+Product name
+
+Product category
+
+Package size or weight, when available
+
+Current price or "Request Today's Rate"
+
+Quantity selector when applicable
+
+Add-to-cart or quote-request action
+
+Keep card heights, image proportions, button positions, and spacing consistent.
+
+Do not invent product weights, package sizes, product reviews, ratings, prices, or stock levels. Product data should be editable by an administrator.
+
+Pricing requirements
+
+Because vegetable market rates change daily, implement one of these two supported purchasing modes:
+
+Mode A — Live pricing
+
+An authorized administrator can update product prices and availability. Customers see the most recently published prices, which are clearly maintained in PKR.
+
+Mode B — Request a quote
+
+When a product does not have a confirmed current price, show "Request Today's Rate" instead of a numeric price. Customers can add their requirements to a quote list and send an inquiry.
+
+When a customer requests a quote, include:
+
+Product names
+
+Quantities
+
+Selected package sizes
+
+Customer contact details
+
+Delivery location, if applicable
+
+Additional requirements
+
+The administrator must be able to respond with current pricing before the order is finalized.
+
+Do not silently substitute estimated prices for confirmed market rates.
+
+6. Product Detail Page
+
+Create an individual detail page for each product.
+
+Include:
+
+Large main product image
+
+Additional product images when available
+
+Product name
+
+Local or imported label
+
+Product description
+
+Weight or package options, if configured
+
+Price or current-rate inquiry
+
+Quantity selector
+
+Stock availability, when verified
+
+Add-to-cart or request-quote button
+
+WhatsApp inquiry action
+
+Related products from the same category
+
+The iceberg lettuce and vacuum-packed lettuce product pages should receive special attention, with strong imagery and detailed information only where the business has supplied it.
+
+Provide a clear notice where relevant:
+
+"Vegetable rates may vary daily according to market conditions. Contact us to confirm today's price and availability."
+
+7. Shopping Cart Drawer
+
+Implement a functional slide-over shopping cart that opens when the customer clicks the cart icon or adds a product.
+
+Drawer header
+
+Display:
+
+Your Cart — X Items
+
+Include a clear close button.
+
+Cart items
+
+Each line item must include:
+
+Product thumbnail
+
+Product name
+
+Selected size or package option, if applicable
+
+Unit price, when confirmed
+
+Quantity decrement button
+
+Current quantity
+
+Quantity increment button
+
+Remove item control
+
+Calculated line total, where pricing is available
+
+All quantity updates must immediately recalculate the appropriate totals.
+
+Unpriced products
+
+If any selected item has no confirmed current price, label it "Price to be confirmed."
+
+Do not calculate an inaccurate monetary total for unpriced items.
+
+Instead, display the cart as an order inquiry and direct the customer to request a quote.
+
+Loyalty and sign-in area
+
+If a real rewards program exists, include its verified details.
+
+Otherwise, use a simple sign-in prompt:
+
+Sign in for a more convenient ordering experience
+
+Do not display fictional loyalty points, rewards balances, or promises.
+
+Cart summary
+
+Show:
+
+Subtotal, when all applicable prices are confirmed
+
+Shipping estimate, if configured
+
+Applicable taxes, if configured
+
+Grand total, when calculable
+
+Notice that delivery charges may require confirmation, if applicable
+
+Buttons:
+
+Continue Shopping
+
+View Cart
+
+Proceed to Checkout
+
+Request a Quote
+
+For a quote-based cart, replace checkout with "Request Current Prices" or an equivalent clear action.
+
+Floating widgets
+
+Provide:
+
+WhatsApp contact button
+
+Scroll-to-top button
+
+Optional sign-in prompt
+
+Ensure that floating elements do not overlap navigation, product cards, or checkout controls on mobile.
+
+8. Full Cart Page
+
+Create a dedicated cart page that displays all selected products in a clear layout.
+
+Include:
+
+Product image
+
+Product name
+
+Quantity
+
+Package option
+
+Price per unit when confirmed
+
+Line total
+
+Remove item
+
+Continue shopping
+
+Cart subtotal
+
+Delivery-cost information
+
+Applicable tax information
+
+Proceed to checkout or request-a-quote CTA
+
+Persist the cart across page navigation and, where practical, across sessions. Handle unavailable products and changed prices gracefully.
+
+Before finalizing an order, verify current pricing and availability.
+
+9. Checkout Page
+
+Design a professional checkout interface that works smoothly on desktop, tablet, and mobile.
+
+Use a two-column desktop layout:
+
+Left column: Customer details, address, delivery, and payment.
+
+Right column: Order items and cost summary.
+
+On mobile, stack both columns into a clear single-column flow.
+
+A. Contact information
+
+Fields:
+
+Full name
+
+Email address
+
+Phone or WhatsApp number
+
+Include an optional sign-in link and a consent checkbox for marketing communications.
+
+Explain that contact details are used for order confirmation and customer service.
+
+B. Delivery address
+
+Fields:
+
+Country, defaulting to Pakistan
+
+First name
+
+Last name
+
+Phone number
+
+Street address
+
+Apartment, suite, or additional address details
+
+City
+
+Province
+
+Postal code, where applicable
+
+Delivery instructions
+
+Provide an optional checkbox to save the address to the customer account.
+
+Only offer delivery zones that the business confirms it serves.
+
+C. Delivery method
+
+Display available delivery methods based on the configured business rules and delivery address.
+
+If delivery eligibility or charges cannot be calculated, show:
+
+"Your delivery options and charges will be confirmed by our team."
+
+Do not invent free delivery, same-day delivery, delivery times, or shipping prices.
+
+D. Payment methods
+
+Prepare the interface to support the payment options the business approves.
+
+Cash on Delivery (COD)
+
+Offer COD only in confirmed service areas and when enabled by the administrator.
+
+Online card payment
+
+Integrate a supported payment gateway only after the business provides its merchant credentials and completes configuration.
+
+All real card transactions must be processed securely through the payment provider. Never store raw card numbers or CVV security codes in the website database.
+
+Do not show a working payment option unless its processing integration is properly configured.
+
+E. Order review
+
+Display:
+
+Selected products
+
+Confirmed unit prices
+
+Quantities
+
+Subtotal
+
+Delivery charges
+
+Applicable taxes
+
+Discounts, where configured
+
+Final total
+
+For products with unconfirmed prices, prevent final checkout until the final prices have been approved or confirmed by the customer.
+
+F. Order submission
+
+Use a clear primary button:
+
+Place Order
+
+After a successful submission, display an order-confirmation page with:
+
+Unique order reference
+
+Order summary
+
+Customer contact details
+
+Delivery information
+
+Payment method
+
+Current order status
+
+Customer support contact
+
+Send an order confirmation through the configured email or messaging integration.
+
+Never display a successful-order message unless the order has actually been created.
+
+10. Quote Request and Wholesale Ordering
+
+Because Fresh Farm Vegetables supplies professional kitchens and deals with variable market rates, build a dedicated wholesale inquiry workflow.
+
+Inquiry form
+
+Include:
+
+Business name
+
+Contact person's name
+
+Business type
+
+Phone / WhatsApp number
+
+Email address
+
+Products required
+
+Quantity required for each product
+
+Packaging requirements
+
+Delivery address
+
+Preferred delivery date
+
+Additional notes
+
+Allow customers to submit several products in a single inquiry.
+
+WhatsApp integration
+
+Use the WhatsApp number +923334934403.
+
+Create contextual messages for product-specific inquiries. For example:
+
+"Hello Fresh Farm Vegetables, I would like today's rates and availability for Iceberg Lettuce. Please share the available package sizes and ordering details."
+
+For a multi-product inquiry, include each selected product and quantity in the message.
+
+All WhatsApp actions should open a direct conversation with the correct number. Validate URL encoding and test links on desktop and mobile.
+
+Inquiry tracking
+
+Store submitted inquiries securely when a backend is configured.
+
+Provide a clear success message after the inquiry is successfully submitted. If the backend is not configured, clearly identify the required integration rather than simulating successful delivery.
+
+11. Customer Accounts
+
+If customer accounts are included, support:
+
+Secure sign-up
+
+Secure sign-in
+
+Password reset
+
+Customer contact details
+
+Saved delivery addresses
+
+Order history
+
+Order status
+
+Saved or favorite products
+
+Sign-out
+
+Keep the experience lightweight and optional for customers who prefer to request rates through WhatsApp.
+
+Use secure authentication and appropriate access controls. Never expose customer order information to unauthorized users.
+
+12. Admin Dashboard
+
+Build an administrative dashboard so the business can maintain the catalog without changing source code.
+
+Product management
+
+Administrators should be able to:
+
+Add products
+
+Edit product names and descriptions
+
+Upload or replace product images
+
+Assign local or imported categories
+
+Add package sizes and weight options
+
+Set current prices
+
+Update availability
+
+Mark featured products
+
+Enable or disable products
+
+Flag products as "Request Today's Rate"
+
+Daily price management
+
+Support quick price updates because market rates fluctuate.
+
+Provide a clear way to update prices and publish the latest confirmed pricing. Track when pricing was last updated.
+
+When a price changes after a customer adds the product to the cart, notify the customer before order submission and require confirmation of the updated total.
+
+Order management
+
+Administrators should be able to:
+
+View incoming orders
+
+View quote requests
+
+Access customer contact details according to their permissions
+
+Confirm product availability
+
+Confirm or update quoted prices
+
+Update order status
+
+Record payment and fulfillment status
+
+Contact customers about their requests
+
+Business settings
+
+Allow authorized administrators to maintain:
+
+Phone and WhatsApp number
+
+Email address
+
+Business address
+
+Social media URLs
+
+App store links
+
+Delivery zones
+
+Delivery charges
+
+Payment options
+
+Tax settings
+
+Business hours, once confirmed
+
+Include appropriate authentication, authorization, server-side validation, and audit logging for sensitive administrative actions.
+
+13. Footer Design
+
+Create a professional multi-column footer using the brand's green and white palette.
+
+Brand column
+
+Fresh Farm Vegetables logo
+
+Short business description
+
+Social media icons
+
+Product categories
+
+Local Vegetables
+
+Imported Vegetables
+
+Iceberg Lettuce
+
+Vacuum-Packed Lettuce
+
+All Products
+
+Customer service
+
+Contact Us
+
+Request a Quote
+
+Order Information
+
+Frequently Asked Questions, if content is supplied
+
+Company
+
+About Us
+
+Privacy Policy
+
+Terms and Conditions
+
+Delivery and Returns Policy, based on approved business rules
+
+Contact information
+
+Display:
+
+Fresh Farm Vegetables
+
+Commercial CCA, Phase 6, DHA, Lahore, Pakistan
+
+Phone / WhatsApp: 0333-4934403
+
+Email: Add the verified business email address.
+
+Include official Instagram and Facebook links once supplied.
+
+App download badges
+
+Display the official Apple App Store and Google Play Store badges using their verified URLs.
+
+Do not retain Fresh Basket's contact information, branding, phone number, email, rewards identity, or proprietary assets.
+
+14. Search, SEO, and Performance
+
+Implement:
+
+Unique page titles and meta descriptions
+
+Semantic HTML
+
+Descriptive product names and image alt text
+
+Product category URLs
+
+A searchable product catalog
+
+Internal links between relevant pages
+
+Sitemap and robots.txt
+
+Canonical URLs where appropriate
+
+Open Graph metadata
+
+Local business structured data using verified details
+
+Product structured data based on actual product and pricing information
+
+Optimized images and lazy loading
+
+Responsive image sizing
+
+Minimal unnecessary JavaScript
+
+Appropriate caching
+
+Fast page loading
+
+Prioritize relevant search phrases such as:
+
+Fresh vegetable supplier in Lahore
+
+Wholesale vegetables in Lahore
+
+Iceberg lettuce supplier in Lahore
+
+Vacuum-packed lettuce supplier
+
+Restaurant vegetable supplier in Lahore
+
+Imported vegetables supplier in Lahore
+
+Never add fake reviews, unsupported ratings, fabricated prices, or structured data that misrepresents the business.
+
+15. Technology Stack
+
+Use a modern stack suitable for a production e-commerce application.
+
+Preferred frontend: Next.js with React and TypeScript.
+
+Styling: Tailwind CSS.
+
+Components: A consistent, accessible component system with reusable buttons, inputs, dropdowns, modals, product cards, and cart components.
+
+Backend: A properly configured server-side application or secure backend service.
+
+Database: A database suitable for storing products, pricing, customer accounts, quote requests, orders, and order status.
+
+Authentication: A secure authentication solution if customer and administrator accounts are supported.
+
+Image storage: Optimized image storage with appropriate upload permissions.
+
+Payment integration: A compatible payment gateway only when approved and properly configured by the business.
+
+Choose a database and deployment setup that support reliable order creation and consistent inventory and price information.
+
+Do not use mock data as if it were real business data in production.
+
+16. Functional Quality Requirements
+
+The following functionality must be fully implemented and tested:
+
+Responsive navigation
+
+Working product search
+
+Working category filters
+
+Product detail pages
+
+Quantity selectors
+
+Add-to-cart functionality
+
+Cart drawer and full cart page
+
+Cart quantity updates and item removal
+
+Correct totals for confirmed prices
+
+Handling of unpriced products
+
+Wholesale quote requests
+
+Product-specific WhatsApp inquiries
+
+Customer registration and sign-in, if enabled
+
+Secure checkout and order creation, if enabled
+
+Daily price updates
+
+Price-change confirmation
+
+Configured payment handling
+
+Administrative product management
+
+Order and inquiry management
+
+Social media links
+
+Verified app store links
+
+Form validation and useful error messages
+
+Loading, empty, success, and failure states
+
+Keyboard accessibility
+
+Responsive image handling
+
+Secure handling of customer and order information
+
+Do not create decorative buttons that do nothing. Do not simulate payment processing, order submission, email delivery, or database persistence.
+
+When an external integration requires credentials or business approval, document the setup needed.
+
+17. Responsive Design Requirements
+
+Design mobile-first and ensure the application works on common desktop, tablet, and mobile screen sizes.
+
+Desktop
+
+Use a full navigation header, spacious product grid, prominent promotional banners, and a two-column checkout.
+
+Tablet
+
+Reduce the number of product columns where necessary, adjust spacing, and keep product controls accessible.
+
+Mobile
+
+Use:
+
+Compact navigation
+
+Readable product cards
+
+Touch-friendly buttons
+
+Scrollable category navigation
+
+A properly sized search field
+
+A compact cart drawer or full-width mobile cart panel
+
+A single-column checkout
+
+Clear quantity controls
+
+Non-obstructive floating WhatsApp access
+
+Test for horizontal overflow, clipped text, overlapping buttons, and unusable checkout forms.
+
+18. Final Design Direction
+
+The finished website should combine the convenience of a modern grocery e-commerce application with the credibility of a professional fresh-produce supplier.
+
+The most important priorities are:
+
+A distinctive Fresh Farm Vegetables brand identity.
+
+A premium homepage centered on fresh produce and iceberg lettuce.
+
+A complete catalog of the supplied local and imported vegetables.
+
+A genuinely working search, cart, and product inquiry experience.
+
+Accurate daily pricing and availability.
+
+Convenient WhatsApp and wholesale quote workflows.
+
+An administrative dashboard for product and pricing updates.
+
+Secure order and payment processing where configured.
+
+A fully responsive mobile experience.
+
+Clean, maintainable code suitable for production deployment.
+
+Final instruction to the developer
+
+Build the actual working website, not simply a UI mockup.
+
+Start by establishing the brand design system, shared components, product data model, and page structure. Implement the homepage, catalog, product details, cart, quote requests, checkout, and administration according to the business's approved operating model.
+
+Use realistic product photography, the approved Fresh Farm Vegetables logo, accurate business information, and clear calls to action.
+
+Use the Fresh Basket reference for general design inspiration only. Create a distinct, polished Fresh Farm Vegetables experience.
+
+Before delivery, test all core customer journeys, verify pricing calculations, validate product inquiry messages, check responsive layouts, and document any integrations that still require business credentials or approval.
+
+The final application must be visually professional, functionally reliable, accessible, and ready for real business use after the required production configuration is completed.

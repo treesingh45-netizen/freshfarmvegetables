@@ -1,0 +1,6 @@
+{
+  "name": "Fresh Farm Vegetables",
+  "description": "Premium fresh iceberg lettuce, vacuum-packed lettuce, and local and imported vegetable supplier in DHA Phase 6, Lahore for restaurants, hotels, and kitchens.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

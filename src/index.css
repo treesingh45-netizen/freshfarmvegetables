@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-leaf: #12B326;
+  --color-leaf-vibrant: #16C72E;
+  --color-forest: #0F5338;
+  --color-forest-dark: #003B22;
+  --color-canvas: #F6F8F6;
+  --color-tomato: #E4483D;
+  --color-ink: #202820;
+  --color-ink-muted: #687268;
+  --color-line: #E4EAE4;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: #202820;
+    background-color: #F6F8F6;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    overflow-x: hidden;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p, li, blockquote {
+    text-wrap: pretty;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ffv-card-shell {
+  clip-path: polygon(0 0, 100% 0, 100% 97%, 50% 100%, 0 97%);
+}
+
+.ffv-add-chevron {
+  clip-path: polygon(0 0, 50% 16%, 100% 0, 100% 86%, 50% 100%, 0 86%);
+}
+
+@keyframes ffvHeroEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ffvHeroKenBurns {
+  from {
+    transform: scale3d(1.01, 1.01, 1);
+  }
+  to {
+    transform: scale3d(1.07, 1.07, 1);
+  }
+}
+
+.ffv-hero-enter-1 {
+  animation: ffvHeroEnter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ffv-hero-enter-2 {
+  animation: ffvHeroEnter 760ms cubic-bezier(0.22, 1, 0.36, 1) 110ms both;
+}
+
+.ffv-hero-enter-3 {
+  animation: ffvHeroEnter 760ms cubic-bezier(0.22, 1, 0.36, 1) 210ms both;
+}
+
+.ffv-hero-enter-4 {
+  animation: ffvHeroEnter 760ms cubic-bezier(0.22, 1, 0.36, 1) 310ms both;
+}
+
+.ffv-hero-bg-motion {
+  animation: ffvHeroKenBurns 18s ease-out forwards;
+  will-change: transform;
+}
+
+.ffv-hero-text-shadow {
+  text-shadow: 0 2px 24px rgba(3, 22, 13, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ffv-hero-enter-1,
+  .ffv-hero-enter-2,
+  .ffv-hero-enter-3,
+  .ffv-hero-enter-4,
+  .ffv-hero-bg-motion {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
