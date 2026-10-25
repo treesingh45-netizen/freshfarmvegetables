@@ -287,7 +287,7 @@ export function CheckoutPage() {
     return (
       <div className="max-w-xl mx-auto px-4 py-16 text-center">
         <div className="bg-white rounded-3xl border border-[#DCE8DC] p-10 space-y-4">
-          <h1 className="text-2xl font-bold text-[#18261B]">Your cart is empty</h1>
+          <h1 className="text-3xl font-semibold text-[#18261B]">Your cart is empty</h1>
           <p className="text-sm text-[#5A6B5D]">
             Add fresh vegetables from our catalog before proceeding to checkout.
           </p>
@@ -315,7 +315,7 @@ export function CheckoutPage() {
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to Shopping Cart</span>
           </button>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#18261B] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-[#18261B]">
             Secure Checkout
           </h1>
           <p className="text-sm text-[#5A6B5D] mt-1">
@@ -335,7 +335,7 @@ export function CheckoutPage() {
           <div className="flex items-start gap-3">
             <AlertCircle className="w-6 h-6 text-[#0F5338] shrink-0 mt-0.5" />
             <div className="space-y-3">
-              <h2 className="text-lg font-bold text-[#18261B]">
+              <h2 className="text-2xl font-semibold text-[#18261B]">
                 Price Confirmation Required Before Final Checkout
               </h2>
               <p className="text-sm text-[#5A6B5D] leading-relaxed">
@@ -396,7 +396,7 @@ export function CheckoutPage() {
             {/* 1. Contact Information */}
             <section className="bg-white rounded-3xl border border-[#DCE8DC] p-6 space-y-4 shadow-2xs">
               <div className="flex items-center justify-between gap-2">
-                <h2 className="text-lg font-bold text-[#18261B]">1. Contact Information</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold text-[#18261B]">1. Contact Information</h2>
                 {!user && (
                   <button
                     type="button"
@@ -493,7 +493,7 @@ export function CheckoutPage() {
             {/* 2. Delivery Address */}
             <section className="bg-white rounded-3xl border border-[#DCE8DC] p-6 space-y-4 shadow-2xs">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <h2 className="text-lg font-bold text-[#18261B]">2. Delivery Address</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold text-[#18261B]">2. Delivery Address</h2>
                 {user && user.savedAddresses.length > 0 && (
                   <select
                     aria-label="Choose a saved address"
@@ -738,7 +738,7 @@ export function CheckoutPage() {
             <section className="bg-white rounded-3xl border border-[#DCE8DC] p-6 space-y-5 shadow-2xs">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div>
-                  <h2 className="text-lg font-bold text-[#18261B]">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-[#18261B]">
                     3. Secure Payment &amp; Verification
                   </h2>
                   <p className="text-xs text-[#5A6B5D] mt-0.5">
@@ -1183,7 +1183,7 @@ export function CheckoutPage() {
           {/* Right Column: Sticky Order Summary in PKR */}
           <div className="lg:col-span-5 bg-white rounded-3xl border border-[#DCE8DC] p-6 space-y-5 shadow-2xs lg:sticky lg:top-32">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-bold text-[#18261B]">Order Summary</h2>
+              <h2 className="text-2xl font-semibold text-[#18261B]">Order Summary</h2>
               <span className="text-xs font-semibold text-[#0F5338] bg-[#F4FAF5] px-2.5 py-1 rounded-lg border border-[#DCE8DC]">
                 {summary.totalItemCount} {summary.totalItemCount === 1 ? 'item' : 'items'}
               </span>

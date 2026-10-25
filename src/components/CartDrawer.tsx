@@ -54,7 +54,7 @@ export function CartDrawer() {
               <ShoppingBag className="w-5 h-5" />
             </div>
             <div>
-              <h2 id="cart-drawer-title" className="text-base sm:text-lg font-bold text-[#18261B]">
+              <h2 id="cart-drawer-title" className="text-xl sm:text-2xl font-semibold text-[#18261B] leading-tight">
                 Shopping Cart
               </h2>
               <p className="text-xs text-[#5A6B5D] tabular-nums">

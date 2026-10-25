@@ -1069,10 +1069,6 @@ async function startServer() {
       address: String(body.address ?? db.settings.address).trim(),
       instagramUrl: String(body.instagramUrl ?? db.settings.instagramUrl).trim(),
       facebookUrl: String(body.facebookUrl ?? db.settings.facebookUrl).trim(),
-      playStoreUrl: String(body.playStoreUrl ?? db.settings.playStoreUrl).trim(),
-      playStoreVerified: Boolean(body.playStoreVerified),
-      appStoreUrl: String(body.appStoreUrl ?? db.settings.appStoreUrl).trim(),
-      appStoreVerified: Boolean(body.appStoreVerified),
       businessHours: String(body.businessHours ?? db.settings.businessHours).trim(),
       codEnabled: Boolean(body.codEnabled),
       qrPaymentEnabled:

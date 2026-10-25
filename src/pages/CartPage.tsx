@@ -45,7 +45,7 @@ export function CartPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#18261B] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-[#18261B]">
             Shopping Cart
           </h1>
           <p className="text-sm text-[#5A6B5D] mt-1">
@@ -78,7 +78,7 @@ export function CartPage() {
           <div className="w-16 h-16 rounded-2xl bg-[#F4FAF5] border border-[#DCE8DC] text-[#12B326] flex items-center justify-center mx-auto mb-4">
             <ShoppingBag className="w-8 h-8" />
           </div>
-          <h2 className="text-lg font-bold text-[#18261B] mb-1">Your shopping cart is empty</h2>
+          <h2 className="text-2xl font-semibold text-[#18261B] mb-1.5">Your shopping cart is empty</h2>
           <p className="text-sm text-[#5A6B5D] mb-6 leading-relaxed">
             Add fresh local or imported vegetables from our catalog to calculate your PKR subtotal and place an order.
           </p>
@@ -234,7 +234,7 @@ export function CartPage() {
 
           {/* Summary Card */}
           <div className="lg:col-span-4 bg-white rounded-3xl border border-[#DCE8DC] p-6 space-y-5 shadow-2xs lg:sticky lg:top-32">
-            <h2 className="text-lg font-bold text-[#18261B]">Order Summary</h2>
+            <h2 className="text-2xl font-semibold text-[#18261B]">Order Summary</h2>
 
             {/* Delivery Zone Estimate Selector */}
             <div className="p-3.5 rounded-2xl bg-[#F4FAF5] border border-[#DCE8DC] space-y-2">

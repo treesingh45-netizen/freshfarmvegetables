@@ -48,7 +48,9 @@ export function ProductDetailPage({ slug }: { slug: string }) {
   if (!product) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold text-[#202820] mb-3">Product Not Found</h1>
+        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-[#202820] mb-3">
+          Product Not Found
+        </h1>
         <p className="text-sm text-[#687268] mb-6">
           This vegetable may have been disabled or moved in our catalog.
         </p>
@@ -199,9 +201,12 @@ export function ProductDetailPage({ slug }: { slug: string }) {
               </button>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#202820] tracking-tight leading-[1.18]">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-[2.7rem] font-semibold text-[#202820] tracking-[-0.015em] leading-[1.1]">
               {product.name}
             </h1>
+            <p className="font-signature text-2xl text-[#12B326] mt-1 py-0.5">
+              Hand-selected for kitchen freshness
+            </p>
           </div>
 
           {/* Pricing & Verified Stock */}
@@ -363,10 +368,15 @@ export function ProductDetailPage({ slug }: { slug: string }) {
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
-        <section className="pt-6 border-t border-[#E4EAE4]">
-          <h2 className="text-xl sm:text-2xl font-bold text-[#202820] mb-6">
-            Related {product.origin === 'local' ? 'Local Produce' : 'Imported Vegetables'}
-          </h2>
+        <section className="pt-8 border-t border-[#E4EAE4]">
+          <div className="mb-6">
+            <p className="font-signature text-2xl text-[#12B326] py-0.5">
+              More from Our Harvest
+            </p>
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[#202820] tracking-[-0.015em] leading-[1.14]">
+              Related {product.origin === 'local' ? 'Local Produce' : 'Imported Vegetables'}
+            </h2>
+          </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3.5 sm:gap-4">
             {relatedProducts.map((rel) => (
               <ProductCard key={rel.id} product={rel} />

@@ -1,49 +1,36 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  Building2,
   ClipboardList,
-  Globe,
   Heart,
-  Layers,
-  Leaf,
   MapPin,
-  PackageCheck,
   Search,
   ShoppingBag,
-  Sprout,
-  TrendingUp,
   User,
   X,
 } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
-import { CatalogCategorySlug } from '../types';
 import { formatPkr } from '../utils/commerce';
 import { BrandLogo } from './BrandLogo';
 import { ProduceImage } from './ProduceImage';
 
 const RIBBON_ITEMS: {
-  id: CatalogCategorySlug | 'wholesale-link';
+  id: string;
   label: string;
   href: string;
-  icon: React.ComponentType<{ className?: string }>;
 }[] = [
-  { id: 'all', label: 'All Products', href: '/products', icon: Layers },
-  { id: 'local', label: 'Local Vegetables', href: '/products?category=local', icon: Sprout },
-  { id: 'imported', label: 'Imported Vegetables', href: '/products?category=imported', icon: Globe },
+  { id: 'home', label: 'Home', href: '/' },
+  { id: 'all', label: 'Products', href: '/products' },
+  { id: 'local', label: 'Local Vegetables', href: '/products?category=local' },
+  { id: 'imported', label: 'Imported Vegetables', href: '/products?category=imported' },
   {
-    id: 'iceberg-lettuce',
-    label: 'Iceberg Lettuce',
-    href: '/products?category=iceberg-lettuce',
-    icon: Leaf,
+    id: 'lettuce-collection',
+    label: 'Lettuce Specialties',
+    href: '/products?category=lettuce-collection',
   },
-  {
-    id: 'vacuum-packed-lettuce',
-    label: 'Vacuum-Packed Lettuce',
-    href: '/products?category=vacuum-packed-lettuce',
-    icon: PackageCheck,
-  },
-  { id: 'bestsellers', label: 'Bestsellers', href: '/products?category=bestsellers', icon: TrendingUp },
-  { id: 'wholesale-link', label: 'Wholesale Supply', href: '/wholesale', icon: Building2 },
+  { id: 'wholesale', label: 'Business Supply', href: '/wholesale' },
+  { id: 'reviews', label: 'Client Reviews', href: '/reviews' },
+  { id: 'about', label: 'About Us', href: '/about' },
+  { id: 'contact', label: 'Contact Us', href: '/contact' },
 ];
 
 export function Header() {
@@ -104,10 +91,19 @@ export function Header() {
   };
 
   const activeCategory = useMemo(() => {
-    if (currentPath === '/wholesale') return 'wholesale-link';
+    if (currentPath === '/' || currentPath === '') return 'home';
+    if (currentPath === '/wholesale' || currentPath === '/business-supply') return 'wholesale';
+    if (currentPath === '/reviews') return 'reviews';
+    if (currentPath === '/about') return 'about';
+    if (currentPath === '/contact') return 'contact';
+    if (currentPath.startsWith('/products/')) return 'all';
     if (currentPath !== '/products') return '';
     const params = new URLSearchParams(currentSearch);
-    return params.get('category') || 'all';
+    const cat = params.get('category') || 'all';
+    if (cat === 'iceberg-lettuce' || cat === 'vacuum-packed-lettuce') {
+      return 'lettuce-collection';
+    }
+    return cat;
   }, [currentPath, currentSearch]);
 
   const activeZone = useMemo(
@@ -122,7 +118,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white border-b border-[#E4EAE4]">
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2.5 sm:gap-4 lg:gap-6">
         {/* Left: Logo */}
         <a
           href="/"
@@ -142,7 +138,7 @@ export function Header() {
         </a>
 
         {/* Center: Search Input with Live Suggestions */}
-        <div ref={searchContainerRef} className="relative flex-1 max-w-xl">
+        <div ref={searchContainerRef} className="relative flex-1 min-w-0 max-w-xl">
           <form onSubmit={handleSearchSubmit} className="relative flex items-center">
             <Search className="w-4 h-4 text-[#687268] absolute left-3 sm:left-3.5 pointer-events-none" />
             <input
@@ -155,14 +151,14 @@ export function Header() {
               }}
               placeholder="Search vegetables..."
               aria-label="Search fresh vegetables"
-              className={`w-full h-10 sm:h-11 pl-9 sm:pl-10 ${query ? 'pr-8' : 'pr-3.5'} md:pr-32 rounded-full bg-[#F6F8F6] border border-[#E4EAE4] text-[13px] sm:text-sm text-[#202820] placeholder:text-[#687268] truncate focus:bg-white focus:border-[#12B326] focus:outline-none transition-colors`}
+              className={`w-full h-10 sm:h-11 pl-9 sm:pl-10 ${query ? 'pr-8' : 'pr-3.5'} lg:pr-32 rounded-full bg-[#F6F8F6] border border-[#E4EAE4] text-[13px] sm:text-sm text-[#202820] placeholder:text-[#687268] truncate focus:bg-white focus:border-[#12B326] focus:outline-none transition-colors`}
             />
             {query && (
               <button
                 type="button"
                 onClick={() => setQuery('')}
                 aria-label="Clear search query"
-                className="absolute right-2.5 md:right-[6.5rem] p-1 text-[#687268] hover:text-[#202820]"
+                className="absolute right-2.5 lg:right-[6.5rem] p-1 text-[#687268] hover:text-[#202820]"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -171,7 +167,7 @@ export function Header() {
               type="button"
               onClick={openSmartList}
               title="Paste a quick vegetable order list"
-              className="hidden md:inline-flex items-center gap-1.5 absolute right-1.5 h-8 px-3 rounded-full bg-white border border-[#E4EAE4] text-xs font-medium text-[#0F5338] hover:border-[#12B326] hover:text-[#12B326] transition-colors whitespace-nowrap"
+              className="hidden lg:inline-flex items-center gap-1.5 absolute right-1.5 h-8 px-3 rounded-full bg-white border border-[#E4EAE4] text-xs font-medium text-[#0F5338] hover:border-[#12B326] hover:text-[#12B326] transition-colors whitespace-nowrap"
             >
               <ClipboardList className="w-3.5 h-3.5 shrink-0" />
               <span>Quick List</span>
@@ -314,21 +310,20 @@ export function Header() {
               e.preventDefault();
               navigate(cartSummary.canProceedToCheckout ? '/checkout' : '/wholesale');
             }}
-            className="hidden md:inline-flex items-center justify-center h-10 px-4 rounded-xl bg-[#12B326] hover:bg-[#0F5338] text-white text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap shrink-0"
+            className="hidden lg:inline-flex items-center justify-center h-10 px-4 rounded-xl bg-[#12B326] hover:bg-[#0F5338] text-white text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap shrink-0"
           >
-            {cartSummary.canProceedToCheckout ? 'Checkout' : 'Wholesale Supply'}
+            {cartSummary.canProceedToCheckout ? 'Checkout' : 'Business Supply'}
           </a>
         </div>
       </div>
 
-      {/* Category Navigation Ribbon */}
+      {/* Primary Site & Category Navigation Ribbon */}
       <nav
-        aria-label="Product categories"
+        aria-label="Primary navigation"
         className="bg-[#0F5338] text-white border-t border-[#003B22]/20"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-1.5 sm:gap-2.5 overflow-x-auto no-scrollbar py-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar py-2">
           {RIBBON_ITEMS.map((item) => {
-            const Icon = item.icon;
             const isSelected = activeCategory === item.id;
             return (
               <a
@@ -338,13 +333,12 @@ export function Header() {
                   e.preventDefault();
                   navigate(item.href);
                 }}
-                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap shrink-0 transition-colors ${
+                className={`inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs sm:text-[13.5px] font-medium whitespace-nowrap shrink-0 transition-colors ${
                   isSelected
                     ? 'bg-[#12B326] text-white font-semibold'
                     : 'text-white/90 hover:text-white hover:bg-white/10'
                 }`}
               >
-                <Icon className="w-3.5 h-3.5 shrink-0" />
                 <span>{item.label}</span>
               </a>
             );
@@ -362,7 +356,7 @@ export function Header() {
         >
           <div className="bg-white rounded-2xl max-w-md w-full p-6 border border-[#E4EAE4] shadow-xl">
             <div className="flex items-center justify-between mb-4">
-              <h2 id="zone-dialog-title" className="text-lg font-bold text-[#202820]">
+              <h2 id="zone-dialog-title" className="text-xl sm:text-2xl font-semibold text-[#202820]">
                 Select Lahore Service Area
               </h2>
               <button

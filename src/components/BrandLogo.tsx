@@ -36,7 +36,7 @@ export function BrandLogo({ variant = 'full', className = '' }: BrandLogoProps) 
       {symbol}
       <span className="flex flex-col leading-none">
         <span
-          className={`font-display text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap ${
+          className={`font-display text-[1.3rem] sm:text-[1.55rem] font-semibold tracking-[-0.015em] whitespace-nowrap ${
             isInverse ? 'text-white' : 'text-[#003B22]'
           }`}
         >

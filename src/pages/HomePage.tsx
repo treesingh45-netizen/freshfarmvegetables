@@ -14,6 +14,7 @@ import {
 import { ProduceImage } from '../components/ProduceImage';
 import { ProductCard } from '../components/ProductCard';
 import { useStore } from '../context/StoreContext';
+import { ClientReviewsSection } from '../components/ClientReviewsSection';
 import { normalizeDigitsPhone } from '../utils/commerce';
 import heroVegetablesPhoto from '../assets/images/fresh_vegetables_hero_1792926611708.jpg';
 
@@ -89,17 +90,21 @@ export function HomePage() {
 
         {/* Centered Hero Content */}
         <div className="relative z-10 w-full max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 py-16 sm:py-20 flex flex-col items-center justify-center text-center">
-          <p className="ffv-hero-enter-1 ffv-hero-text-shadow text-[11px] sm:text-xs md:text-[13px] font-semibold uppercase tracking-[0.14em] sm:tracking-[0.22em] text-white/90 mb-4 sm:mb-5">
+          <p className="ffv-hero-enter-1 ffv-hero-text-shadow font-sans text-[11px] sm:text-xs md:text-[13px] font-semibold uppercase tracking-[0.16em] sm:tracking-[0.22em] text-white/90 mb-4 sm:mb-5">
             FRESH FARM VEGETABLES · LAHORE, PAKISTAN
           </p>
 
-          <h1 className="ffv-hero-enter-2 ffv-hero-text-shadow font-display text-[2rem] sm:text-5xl md:text-[3.5rem] lg:text-[4rem] font-bold text-white tracking-tight leading-[1.14] sm:leading-[1.08] max-w-3xl lg:max-w-4xl mb-5 sm:mb-6 text-balance">
+          <h1 className="ffv-hero-enter-2 ffv-hero-text-shadow font-display text-[2.45rem] sm:text-[3.5rem] md:text-[4.25rem] lg:text-[4.85rem] font-semibold text-white tracking-[-0.015em] leading-[1.08] max-w-3xl lg:max-w-4xl mb-4 sm:mb-5 text-balance">
             Freshness You Can Taste.{' '}
             <br className="hidden sm:inline" />
             Quality You Can Trust.
           </h1>
 
-          <p className="ffv-hero-enter-3 ffv-hero-text-shadow text-base sm:text-lg md:text-xl text-white/92 font-normal leading-relaxed max-w-2xl mb-8 sm:mb-10 text-pretty">
+          <p className="ffv-hero-enter-3 ffv-hero-text-shadow font-signature text-2xl sm:text-[1.85rem] text-[#A8F2B4] mb-3 sm:mb-4 py-0.5">
+            Farm to Professional Kitchen
+          </p>
+
+          <p className="ffv-hero-enter-3 ffv-hero-text-shadow font-sans text-base sm:text-lg md:text-[1.15rem] text-white/92 font-normal leading-relaxed max-w-2xl mb-8 sm:mb-10 text-pretty">
             Premium farm-fresh vegetables and specialty lettuce for restaurants, hotels, cafés, and professional kitchens.
           </p>
 
@@ -162,10 +167,10 @@ export function HomePage() {
                   <Icon className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
-                  <h2 className="text-sm sm:text-[15px] font-bold text-[#202820] leading-snug mb-1">
+                  <h2 className="font-display text-lg sm:text-[1.25rem] font-semibold text-[#18261B] leading-snug mb-1">
                     {item.title}
                   </h2>
-                  <p className="text-xs sm:text-[13px] text-[#687268] leading-relaxed">
+                  <p className="text-xs sm:text-[13.5px] text-[#687268] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -179,13 +184,13 @@ export function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div className="max-w-2xl">
-            <p className="text-xs sm:text-sm font-semibold text-[#12B326] mb-1.5">
-              Core Selection
+            <p className="font-signature text-2xl sm:text-[1.75rem] text-[#12B326] py-0.5">
+              Harvested Fresh Daily
             </p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#202820] tracking-tight leading-[1.2]">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold text-[#202820] tracking-[-0.015em] leading-[1.12]">
               Featured Fresh Produce
             </h2>
-            <p className="text-sm sm:text-base text-[#687268] leading-relaxed mt-1.5">
+            <p className="text-sm sm:text-base text-[#687268] leading-relaxed mt-2">
               Highlighting our signature lettuce varieties and everyday kitchen essentials.
             </p>
           </div>
@@ -212,13 +217,13 @@ export function HomePage() {
       {/* Section D: Browse by Category */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8 max-w-2xl">
-          <p className="text-xs sm:text-sm font-semibold text-[#12B326] mb-1.5">
-            Curated Lines
+          <p className="font-signature text-2xl sm:text-[1.75rem] text-[#12B326] py-0.5">
+            Curated Produce Lines
           </p>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#202820] tracking-tight leading-[1.2]">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold text-[#202820] tracking-[-0.015em] leading-[1.12]">
             Browse by Category
           </h2>
-          <p className="text-sm sm:text-base text-[#687268] leading-relaxed mt-1.5">
+          <p className="text-sm sm:text-base text-[#687268] leading-relaxed mt-2">
             Explore fresh daily harvests, imported culinary produce, and our dedicated lettuce collection.
           </p>
         </div>
@@ -264,8 +269,8 @@ export function HomePage() {
                 />
               </div>
               <div className="p-6 flex-1 flex flex-col">
-                <p className="text-xs text-[#687268] mb-1">{cat.meta}</p>
-                <h3 className="text-lg font-bold text-[#202820] group-hover:text-[#12B326] transition-colors mb-2">
+                <p className="text-xs font-medium text-[#687268] mb-1">{cat.meta}</p>
+                <h3 className="font-display text-2xl sm:text-[1.6rem] font-semibold text-[#202820] group-hover:text-[#12B326] transition-colors leading-[1.16] mb-2">
                   {cat.title}
                 </h3>
                 <p className="text-sm text-[#687268] leading-relaxed mb-4 flex-1">{cat.desc}</p>
@@ -279,15 +284,20 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Section E: Wholesale Supply */}
+      {/* Section E: Business & Wholesale Supply */}
       <section className="bg-[#0F5338] text-white py-14 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-5">
-              <p className="text-xs sm:text-sm font-semibold text-[#16C72E]">
-                Restaurants · Hotels · Cafés · Commercial Kitchens
-              </p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.16] text-balance">
+              <div className="space-y-1">
+                <p className="font-signature text-2xl sm:text-[1.8rem] text-[#8EE04E] py-0.5">
+                  For Culinary &amp; Hospitality Teams
+                </p>
+                <p className="text-xs font-semibold tracking-wider uppercase text-white/80">
+                  Restaurants · Hotels · Cafés · Commercial Kitchens
+                </p>
+              </div>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.85rem] font-semibold tracking-[-0.015em] leading-[1.1] text-balance">
                 Your Trusted Partner for Fresh Produce
               </h2>
               <p className="text-sm sm:text-base text-white/88 leading-relaxed max-w-2xl text-pretty">
@@ -340,8 +350,9 @@ export function HomePage() {
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden border border-white/15 bg-[#003B22]">
                 <ProduceImage
-                  src="/images/produce/wholesale-kitchen.jpg"
-                  alt="Fresh farm vegetables prepared for restaurant and hotel supply"
+                  src="https://airdrielife.com/wp-content/uploads/2020/07/Mosaic-Farms-min.jpg"
+                  fallbackSrc="/assets/aistudio/image_25c8a1c3.png"
+                  alt="Mosaic Farms fresh farm produce market stand with organic vegetables in rustic baskets"
                   className="w-full aspect-4/3 object-cover"
                 />
               </div>
@@ -351,73 +362,16 @@ export function HomePage() {
       </section>
 
       {/* Section F: Trusted by Our Customers */}
-      <section
-        aria-labelledby="trusted-customers-heading"
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-      >
-        <div className="max-w-2xl mx-auto text-center mb-10 sm:mb-12">
-          <p className="text-xs sm:text-sm font-semibold text-[#12B326] tracking-wide mb-2">
-            Trusted by Our Customers
-          </p>
-          <h2
-            id="trusted-customers-heading"
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#202820] tracking-tight leading-[1.15] text-balance mb-3.5"
-          >
-            Quality Produce. Reliable Service. Happy Kitchens.
-          </h2>
-          <p className="text-sm sm:text-base text-[#687268] leading-relaxed text-balance">
-            We are committed to delivering fresh, quality vegetables and dependable service to restaurants, hotels, and professional kitchens.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          {[
-            {
-              title: 'Client Review 01 — Product Quality',
-              quote:
-                '“Fresh Farm Vegetables provides excellent-quality produce. The vegetables are fresh, well presented, and suitable for our kitchen\'s daily needs.”',
-              author: '— Restaurant Customer',
-            },
-            {
-              title: 'Client Review 02 — Freshness & Consistency',
-              quote:
-                '“We appreciate the quality of their fresh vegetables and their focus on consistent supply. A helpful option for professional food businesses.”',
-              author: '— Food Business Customer',
-            },
-            {
-              title: 'Client Review 03 — Customer Service',
-              quote:
-                '“Professional communication and a good selection of local and imported vegetables make sourcing our kitchen essentials more convenient.”',
-              author: '— Hospitality Customer',
-            },
-          ].map((review) => (
-            <article
-              key={review.title}
-              className="bg-white rounded-2xl border border-[#E4EAE4] p-7 sm:p-8 flex flex-col justify-between hover:border-[#12B326]/50 transition-colors"
-            >
-              <div>
-                <div className="pb-4 border-b border-[#E4EAE4]">
-                  <h3 className="text-xs sm:text-[13px] font-semibold text-[#0F5338] tracking-tight tabular-nums">
-                    {review.title}
-                  </h3>
-                </div>
-                <blockquote className="py-6 text-[15.5px] sm:text-base text-[#202820] leading-[1.7] font-normal">
-                  {review.quote}
-                </blockquote>
-              </div>
-              <div className="pt-4 border-t border-[#F0F4F0]">
-                <p className="text-sm font-semibold text-[#0F5338]">{review.author}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <ClientReviewsSection featuredOnly limit={3} headingTag="h2" />
 
       {/* Section G: Contact Call to Action */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl border border-[#E4EAE4] p-6 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div className="space-y-3.5 max-w-2xl">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#202820] tracking-tight leading-[1.2] text-balance">
+            <p className="font-signature text-2xl sm:text-[1.75rem] text-[#12B326] py-0.5">
+              Direct Lahore Dispatch
+            </p>
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-[2.45rem] font-semibold text-[#202820] tracking-[-0.015em] leading-[1.14] text-balance">
               Let&apos;s Talk About Your Fresh Produce Requirements
             </h2>
             <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-x-6 gap-y-2.5 text-sm text-[#687268]">

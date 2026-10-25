@@ -95,10 +95,6 @@ export interface BusinessSettings {
   emailVerified: boolean;
   instagramUrl: string;
   facebookUrl: string;
-  playStoreUrl: string;
-  playStoreVerified: boolean;
-  appStoreUrl: string;
-  appStoreVerified: boolean;
   businessHours: string;
   codEnabled: boolean;
   qrPaymentEnabled: boolean;

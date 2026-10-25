@@ -10,6 +10,7 @@ import { AdminPage } from './pages/AdminPage';
 import { CartPage } from './pages/CartPage';
 import { CatalogPage } from './pages/CatalogPage';
 import { CheckoutPage } from './pages/CheckoutPage';
+import { ClientReviewsPage } from './pages/ClientReviewsPage';
 import { HomePage } from './pages/HomePage';
 import { OrderConfirmationPage } from './pages/OrderConfirmationPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
@@ -35,8 +36,10 @@ function AppRoutes() {
   } else if (currentPath.startsWith('/order-confirmation/')) {
     const ref = decodeURIComponent(currentPath.slice('/order-confirmation/'.length));
     content = <OrderConfirmationPage reference={ref} />;
-  } else if (currentPath === '/wholesale') {
+  } else if (currentPath === '/wholesale' || currentPath === '/business-supply') {
     content = <WholesalePage />;
+  } else if (currentPath === '/reviews') {
+    content = <ClientReviewsPage />;
   } else if (currentPath === '/account') {
     content = <AccountPage />;
   } else if (currentPath === '/admin') {

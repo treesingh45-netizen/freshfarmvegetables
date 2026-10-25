@@ -217,7 +217,7 @@ export function AccountPage() {
       <div className="max-w-md mx-auto px-4 py-12 sm:py-16">
         <div className="bg-white rounded-3xl border border-[#E4EAE4] p-6 sm:p-8 space-y-6">
           <div>
-            <h1 className="text-2xl font-bold text-[#202820]">
+            <h1 className="text-3xl font-semibold text-[#202820]">
               {authMode === 'login'
                 ? 'Customer Sign In'
                 : authMode === 'register'
@@ -469,7 +469,7 @@ export function AccountPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <p className="text-xs font-semibold text-[#0F5338]">Customer Portal</p>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#202820]">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-[#202820]">
             Welcome, {user.fullName}
           </h1>
           <p className="text-xs text-[#687268]">{user.email}</p>
@@ -701,7 +701,7 @@ export function AccountPage() {
             onSubmit={handleAddAddress}
             className="lg:col-span-5 bg-white rounded-3xl border border-[#E4EAE4] p-6 space-y-3.5"
           >
-            <h2 className="text-base font-bold text-[#202820] flex items-center gap-1.5">
+            <h2 className="text-xl font-semibold text-[#202820] flex items-center gap-1.5">
               <Plus className="w-4 h-4 text-[#12B326]" />
               <span>Add Delivery Address</span>
             </h2>
@@ -771,7 +771,7 @@ export function AccountPage() {
           onSubmit={handleSaveProfile}
           className="bg-white rounded-3xl border border-[#E4EAE4] p-6 max-w-lg space-y-4"
         >
-          <h2 className="text-lg font-bold text-[#202820]">Contact Details</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold text-[#202820]">Contact Details</h2>
           {profSavedMsg && <p className="text-xs font-semibold text-[#12B326]">{profSavedMsg}</p>}
           <div>
             <label htmlFor="prof-name" className="block text-xs font-semibold mb-1">

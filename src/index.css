@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "The Seasons", "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-signature: "Allura", "Alex Brush", cursive;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   --color-leaf: #12B326;
@@ -28,18 +29,37 @@
   }
 
   body {
+    font-family: var(--font-sans);
     overflow-x: hidden;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
-  h1, h2, h3, h4, .font-display {
+  h1,
+  h2,
+  .font-display {
     font-family: var(--font-display);
+    font-feature-settings: "liga" 1, "clig" 1;
+    letter-spacing: -0.012em;
     text-wrap: balance;
   }
 
-  p, li, blockquote {
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  blockquote {
     text-wrap: pretty;
   }
+}
+
+.font-signature {
+  font-family: var(--font-signature);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -103,14 +123,52 @@
   text-shadow: 0 2px 24px rgba(3, 22, 13, 0.45);
 }
 
+@keyframes ffvReviewEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.ffv-review-pre {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+
+.ffv-review-header-enter {
+  animation: ffvReviewEnter 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.ffv-review-enter-1 {
+  animation: ffvReviewEnter 560ms cubic-bezier(0.16, 1, 0.3, 1) 40ms both;
+}
+
+.ffv-review-enter-2 {
+  animation: ffvReviewEnter 560ms cubic-bezier(0.16, 1, 0.3, 1) 130ms both;
+}
+
+.ffv-review-enter-3 {
+  animation: ffvReviewEnter 560ms cubic-bezier(0.16, 1, 0.3, 1) 220ms both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ffv-hero-enter-1,
   .ffv-hero-enter-2,
   .ffv-hero-enter-3,
   .ffv-hero-enter-4,
-  .ffv-hero-bg-motion {
+  .ffv-hero-bg-motion,
+  .ffv-review-pre,
+  .ffv-review-header-enter,
+  .ffv-review-enter-1,
+  .ffv-review-enter-2,
+  .ffv-review-enter-3 {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
   }
 }
+

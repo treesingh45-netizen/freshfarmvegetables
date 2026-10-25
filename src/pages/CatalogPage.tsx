@@ -5,14 +5,61 @@ import { useStore } from '../context/StoreContext';
 import { CatalogCategorySlug, ProduceOrigin } from '../types';
 import { filterAndSortProducts, ProductFilterOptions } from '../utils/commerce';
 
-const CATEGORY_TABS: { slug: CatalogCategorySlug; label: string }[] = [
-  { slug: 'all', label: 'All Products' },
-  { slug: 'local', label: 'Fresh Local Produce' },
-  { slug: 'imported', label: 'Imported Vegetables' },
-  { slug: 'iceberg-lettuce', label: 'Iceberg Lettuce' },
-  { slug: 'vacuum-packed-lettuce', label: 'Vacuum-Packed Lettuce' },
-  { slug: 'lettuce-collection', label: 'Lettuce Collection' },
-  { slug: 'bestsellers', label: 'Bestsellers' },
+const CATEGORY_TABS: {
+  slug: CatalogCategorySlug;
+  label: string;
+  heading: string;
+  subtitle: string;
+}[] = [
+  {
+    slug: 'all',
+    label: 'All Products',
+    heading: 'Complete Produce Catalog',
+    subtitle:
+      'Fresh local produce, imported vegetables, and house-specialty iceberg and vacuum-packed lettuce. Vegetable rates fluctuate daily according to market conditions.',
+  },
+  {
+    slug: 'local',
+    label: 'Fresh Local Produce',
+    heading: 'Fresh Local Vegetables',
+    subtitle:
+      'Everyday farm-fresh vegetables selected each morning for commercial kitchens, restaurants, and households in Lahore.',
+  },
+  {
+    slug: 'imported',
+    label: 'Imported Vegetables',
+    heading: 'Imported Culinary Vegetables',
+    subtitle:
+      'Specialty imported vegetables, coloured capsicums, mushrooms, broccoli, and culinary greens for continental and hospitality menus.',
+  },
+  {
+    slug: 'iceberg-lettuce',
+    label: 'Iceberg Lettuce',
+    heading: 'Fresh Iceberg Lettuce',
+    subtitle:
+      'Crisp, tightly-headed iceberg lettuce harvested and trimmed for restaurants, burger kitchens, cafés, and salad prep stations.',
+  },
+  {
+    slug: 'vacuum-packed-lettuce',
+    label: 'Vacuum-Packed Lettuce',
+    heading: 'Vacuum-Packed Lettuce',
+    subtitle:
+      'Hygienically vacuum-sealed lettuce engineered for extended cold-room freshness and consistent commercial kitchen prep.',
+  },
+  {
+    slug: 'lettuce-collection',
+    label: 'Lettuce Collection',
+    heading: 'Specialty Lettuce Collection',
+    subtitle:
+      'Our signature iceberg, vacuum-packed, romaine, and lolo rose lettuce varieties curated for chefs and hospitality teams.',
+  },
+  {
+    slug: 'bestsellers',
+    label: 'Bestsellers',
+    heading: 'Kitchen Bestsellers',
+    subtitle:
+      'Our most frequently ordered fresh vegetables across Lahore restaurants, hotels, cafés, and households.',
+  },
 ];
 
 export function CatalogPage() {
@@ -87,19 +134,25 @@ export function CatalogPage() {
     sortBy !== 'featured' ||
     inStockOnly;
 
+  const activeCategoryMeta =
+    CATEGORY_TABS.find((t) => t.slug === category) || CATEGORY_TABS[0];
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      {/* Header */}
+      {/* Editorial Page & Product-Category Header */}
       <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="max-w-2xl">
-          <p className="text-xs sm:text-sm font-semibold text-[#12B326] mb-1.5">
-            Fresh Farm Vegetables · DHA Phase 6, Lahore
+          <p className="font-signature text-2xl sm:text-[1.8rem] text-[#12B326] py-0.5">
+            Harvested Fresh Daily
           </p>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#202820] tracking-tight leading-[1.16]">
-            Complete Produce Catalog
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#0F5338] mb-1">
+            Fresh Farm Vegetables · <span className="whitespace-nowrap">DHA Phase 6, Lahore</span>
+          </p>
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-[2.95rem] font-semibold text-[#202820] tracking-[-0.015em] leading-[1.1]">
+            {activeCategoryMeta.heading}
           </h1>
-          <p className="text-sm sm:text-base text-[#687268] leading-relaxed mt-2">
-            Fresh local produce, imported vegetables, and house-specialty iceberg and vacuum-packed lettuce. Vegetable rates fluctuate daily according to market conditions.
+          <p className="text-sm sm:text-base text-[#687268] leading-relaxed mt-2.5">
+            {activeCategoryMeta.subtitle}
           </p>
         </div>
         {settings.lastDailyRatesPublishedAt && (
@@ -229,7 +282,7 @@ export function CatalogPage() {
           onClick={() => navigate('/wholesale')}
           className="text-[#0F5338] font-semibold hover:underline text-left sm:text-right"
         >
-          Ordering for a restaurant or hotel? Request wholesale rates
+          Ordering for a restaurant or hotel? Request business supply rates
         </button>
       </div>
 
@@ -242,7 +295,7 @@ export function CatalogPage() {
         </div>
       ) : (
         <div className="bg-white rounded-3xl border border-[#E4EAE4] p-10 sm:p-14 text-center max-w-xl mx-auto my-8">
-          <h2 className="text-lg font-bold text-[#202820] mb-2">
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[#202820] mb-2">
             No matching vegetables found
           </h2>
           <p className="text-sm text-[#687268] mb-6 leading-relaxed">

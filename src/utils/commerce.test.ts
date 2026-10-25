@@ -2,6 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DEFAULT_BUSINESS_SETTINGS, INITIAL_PRODUCTS } from '../data/catalogSeed';
 import {
+  CLIENT_REVIEWS,
+  getApprovedClientReviews,
+  getVerifiedBusinessType,
+  getVerifiedStarRating,
+  sanitizeReviewQuote,
+} from '../data/reviewsData';
+import {
   buildMultiItemWhatsAppUrl,
   buildOrderWhatsAppUrl,
   buildProductWhatsAppUrl,
@@ -324,3 +331,71 @@ test('checkout validation enforces QR payment proof (Transaction ID or Receipt) 
   assert.ok(quoteErrors.contactName);
   assert.ok(quoteErrors.items);
 });
+
+test('client reviews enforce genuine approved content, conditional ratings/business types, and zero App Store / Google Play fields', () => {
+  assert.equal(CLIENT_REVIEWS.length, 3);
+  const homeFeatured = getApprovedClientReviews(CLIENT_REVIEWS, { featuredOnly: true, limit: 3 });
+  assert.equal(homeFeatured.length, 3);
+  assert.equal(homeFeatured[0].customerName, 'Restaurant Customer');
+  assert.equal(homeFeatured[1].customerName, 'Food Business Customer');
+  assert.equal(homeFeatured[2].customerName, 'Hospitality Customer');
+
+  // Seed reviews must never fabricate star ratings or unverified business types
+  for (const review of CLIENT_REVIEWS) {
+    assert.equal(getVerifiedStarRating(review), null);
+    assert.equal(getVerifiedBusinessType(review), null);
+  }
+
+  // Conditional rating & verified business type helpers only pass genuinely verified values
+  assert.equal(
+    getVerifiedStarRating({
+      ...CLIENT_REVIEWS[0],
+      rating: 5,
+      ratingVerified: false,
+    }),
+    null
+  );
+  assert.equal(
+    getVerifiedStarRating({
+      ...CLIENT_REVIEWS[0],
+      rating: 5,
+      ratingVerified: true,
+    }),
+    5
+  );
+  assert.equal(
+    getVerifiedBusinessType({
+      ...CLIENT_REVIEWS[0],
+      businessType: 'Fine Dining Restaurant',
+      verifiedBusinessType: false,
+    }),
+    null
+  );
+  assert.equal(
+    getVerifiedBusinessType({
+      ...CLIENT_REVIEWS[0],
+      businessType: 'Fine Dining Restaurant',
+      verifiedBusinessType: true,
+    }),
+    'Fine Dining Restaurant'
+  );
+
+  // Empty or unapproved lists return clean empty array for ready-for-content layout
+  assert.deepEqual(
+    getApprovedClientReviews([{ ...CLIENT_REVIEWS[0], approved: false }]),
+    []
+  );
+  assert.equal(
+    sanitizeReviewQuote('“Fresh produce every morning.”'),
+    'Fresh produce every morning.'
+  );
+
+  const settingKeys = Object.keys(DEFAULT_BUSINESS_SETTINGS);
+  assert.equal(settingKeys.includes('appStoreUrl'), false);
+  assert.equal(settingKeys.includes('appStoreVerified'), false);
+  assert.equal(settingKeys.includes('playStoreUrl'), false);
+  assert.equal(settingKeys.includes('playStoreVerified'), false);
+});
+
+
+

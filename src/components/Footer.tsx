@@ -4,98 +4,6 @@ import { useStore } from '../context/StoreContext';
 import { normalizeDigitsPhone } from '../utils/commerce';
 import { BrandLogo } from './BrandLogo';
 
-export function AppStoreBadges({ inverse = false }: { inverse?: boolean }) {
-  const { settings } = useStore();
-  const [notice, setNotice] = useState('');
-
-  const handleUnverifiedClick = (storeName: string) => {
-    setNotice(
-      `Official ${storeName} link will open automatically once published in Admin Settings. Order directly via WhatsApp (${settings.phoneDisplay}) or web catalog.`
-    );
-  };
-
-  const badgeClass = inverse
-    ? 'bg-white/10 hover:bg-white/20 border-white/20 text-white'
-    : 'bg-[#3C3E3D] hover:bg-[#232824] border-[#3C3E3D] text-white';
-
-  const appleSvg = (
-    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current shrink-0" aria-hidden="true">
-      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.58.68-1.1 1.79-.96 2.84 1.04.08 2.08-.52 2.72-1.3z" />
-    </svg>
-  );
-
-  const playSvg = (
-    <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current shrink-0" aria-hidden="true">
-      <path d="M3.6 2.4c-.3.3-.5.8-.5 1.4v16.4c0 .6.2 1.1.5 1.4l.1.1L13 12.4v-.2L3.7 2.3l-.1.1zm12.5 13.2l-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1-.1-.1zM16.2 15.5L13 12.3 3.7 21.6c.4.4 1 .4 1.7 0l10.8-6.1zm0-6.6L5.4 2.8c-.7-.4-1.3-.4-1.7 0L13 12.1l3.2-3.2z" />
-    </svg>
-  );
-
-  return (
-    <div>
-      <div className="flex flex-wrap items-center gap-3">
-        {settings.appStoreVerified && settings.appStoreUrl ? (
-          <a
-            href={settings.appStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-lg border transition-colors min-w-[148px] ${badgeClass}`}
-          >
-            {appleSvg}
-            <span className="text-left leading-tight">
-              <span className="block text-[10px] opacity-85">Download on the</span>
-              <span className="block text-sm font-semibold tracking-tight">App Store</span>
-            </span>
-          </a>
-        ) : (
-          <button
-            type="button"
-            onClick={() => handleUnverifiedClick('App Store')}
-            className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-lg border transition-colors min-w-[148px] ${badgeClass}`}
-          >
-            {appleSvg}
-            <span className="text-left leading-tight">
-              <span className="block text-[10px] opacity-85">Download on the</span>
-              <span className="block text-sm font-semibold tracking-tight">App Store</span>
-            </span>
-          </button>
-        )}
-
-        {settings.playStoreVerified && settings.playStoreUrl ? (
-          <a
-            href={settings.playStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-lg border transition-colors min-w-[148px] ${badgeClass}`}
-          >
-            {playSvg}
-            <span className="text-left leading-tight">
-              <span className="block text-[10px] opacity-85">Get it on</span>
-              <span className="block text-sm font-semibold tracking-tight">Google Play</span>
-            </span>
-          </a>
-        ) : (
-          <button
-            type="button"
-            onClick={() => handleUnverifiedClick('Google Play')}
-            className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-lg border transition-colors min-w-[148px] ${badgeClass}`}
-          >
-            {playSvg}
-            <span className="text-left leading-tight">
-              <span className="block text-[10px] opacity-85">Get it on</span>
-              <span className="block text-sm font-semibold tracking-tight">Google Play</span>
-            </span>
-          </button>
-        )}
-      </div>
-      {notice && (
-        <p className={`mt-2 text-xs max-w-md ${inverse ? 'text-white/80' : 'text-[#5C665E]'}`}>
-          {notice}
-        </p>
-      )}
-    </div>
-  );
-}
-
 export function Footer() {
   const { settings, navigate } = useStore();
   const [socialNotice, setSocialNotice] = useState('');
@@ -114,7 +22,7 @@ export function Footer() {
           e.preventDefault();
           navigate(href);
         }}
-        className="text-[14px] text-[#222B24] hover:text-[#12B326] transition-colors"
+        className="text-[14px] font-sans text-[#222B24] hover:text-[#12B326] transition-colors"
       >
         {label}
       </a>
@@ -127,11 +35,13 @@ export function Footer() {
       <div className="h-1 w-full bg-gradient-to-r from-[#0F5338] via-[#12B326] to-[#8EE04E]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-24">
-        {/* Top Row: Connect With Us (Left) + App Store Badges (Right) */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-10 border-b border-[#E4EAE4]/80 mb-8">
+        {/* Top Row: Connect With Us (Left) + Editorial Brand Signature Detail (Right) */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#E4EAE4]/80 mb-9">
           <div>
             <div className="flex flex-wrap items-center gap-4">
-              <span className="text-[15px] font-semibold text-[#1E2620]">Connect with us</span>
+              <span className="text-[14.5px] font-sans font-semibold text-[#1E2620]">
+                Connect with us
+              </span>
               <div className="flex items-center gap-2.5">
                 {settings.facebookUrl ? (
                   <a
@@ -199,44 +109,52 @@ export function Footer() {
             {socialNotice && <p className="text-xs text-[#5C665E] mt-2">{socialNotice}</p>}
           </div>
 
-          <AppStoreBadges />
+          <div className="flex flex-col sm:items-end gap-0.5">
+            <span className="font-signature text-2xl sm:text-[1.7rem] text-[#0F5338] py-0.5">
+              Freshness from Farm to Kitchen
+            </span>
+            <span className="text-xs text-[#687268]">
+              Commercial CCA, Phase 6, DHA · Lahore, Pakistan
+            </span>
+          </div>
         </div>
 
         {/* Main 5-Zone Footer Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-y-8 gap-x-6 pb-10">
-          {/* Column 1: Company & Policies */}
+          {/* Column 1: Pages */}
           <div className="lg:col-span-2">
-            <h2 className="text-xs font-bold text-[#0F5338] tracking-wide mb-3.5">
-              Company
-            </h2>
+            <p className="text-xs font-sans font-bold text-[#0F5338] tracking-wide mb-3.5">
+              Explore
+            </p>
             <ul className="space-y-3">
+              {footerLink('/', 'Home')}
+              {footerLink('/products', 'Products')}
               {footerLink('/about', 'About Us')}
+              {footerLink('/wholesale', 'Business Supply')}
+              {footerLink('/reviews', 'Client Reviews')}
               {footerLink('/contact', 'Contact Us')}
-              {footerLink('/privacy', 'Privacy Policy')}
-              {footerLink('/order-info', 'Order Information')}
-              {footerLink('/terms', 'Terms & Conditions')}
             </ul>
           </div>
 
-          {/* Column 2: Customer Account & Supply */}
+          {/* Column 2: Customer Care & Policies */}
           <div className="lg:col-span-2">
-            <h2 className="text-xs font-bold text-[#0F5338] tracking-wide mb-3.5">
+            <p className="text-xs font-sans font-bold text-[#0F5338] tracking-wide mb-3.5">
               Customer Care
-            </h2>
+            </p>
             <ul className="space-y-3">
-              {footerLink('/account', 'Login')}
               {footerLink('/account', 'My Account')}
+              {footerLink('/order-info', 'Order Information')}
               {footerLink('/delivery-policy', 'Delivery & Return Policy')}
-              {footerLink('/contact', 'Lahore Service Areas')}
-              {footerLink('/wholesale', 'Wholesale Supply')}
+              {footerLink('/privacy', 'Privacy Policy')}
+              {footerLink('/terms', 'Terms & Conditions')}
             </ul>
           </div>
 
           {/* Column 3: Core Categories */}
           <div className="lg:col-span-2">
-            <h2 className="text-xs font-bold text-[#0F5338] tracking-wide mb-3.5">
+            <p className="text-xs font-sans font-bold text-[#0F5338] tracking-wide mb-3.5">
               Produce Lines
-            </h2>
+            </p>
             <ul className="space-y-3">
               {footerLink('/products?category=iceberg-lettuce', 'Iceberg Lettuce')}
               {footerLink('/products?category=vacuum-packed-lettuce', 'Vacuum-Packed Lettuce')}
@@ -247,16 +165,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Kitchen Essentials & Admin */}
+          {/* Column 4: Kitchen Staples & Product Details */}
           <div className="lg:col-span-2">
-            <h2 className="text-xs font-bold text-[#0F5338] tracking-wide mb-3.5">
+            <p className="text-xs font-sans font-bold text-[#0F5338] tracking-wide mb-3.5">
               Kitchen Staples
-            </h2>
+            </p>
             <ul className="space-y-3">
+              {footerLink('/products/iceberg-lettuce', 'Iceberg Lettuce Details')}
               {footerLink('/products/cherry-tomatoes', 'Cherry Tomatoes')}
               {footerLink('/products/broccoli', 'Broccoli')}
-              {footerLink('/products?q=Capsicum', 'Bell Peppers')}
-              {footerLink('/products?q=Basil', 'Fresh Culinary Herbs')}
+              {footerLink('/products/red-capsicum', 'Red Capsicum')}
               {footerLink('/products/mushrooms', 'Button Mushrooms')}
               {footerLink('/admin', 'Admin Dashboard')}
             </ul>
@@ -271,9 +189,9 @@ export function Footer() {
               <Mail className="w-5 h-5 text-[#0D3B2E] shrink-0" />
               <div className="min-w-0">
                 <span className="block text-[11px] font-semibold text-[#65A30D] tracking-wide">
-                  HELP CENTER
+                  Email Inquiries
                 </span>
-                <span className="block text-[13.5px] font-bold text-[#0D3B2E] truncate">
+                <span className="block text-[13.5px] font-semibold text-[#0D3B2E] truncate">
                   {officialEmail}
                 </span>
               </div>
@@ -286,7 +204,7 @@ export function Footer() {
               <Phone className="w-5 h-5 text-[#0D3B2E] fill-current shrink-0" />
               <div className="min-w-0">
                 <span className="block text-[11px] font-semibold text-[#65A30D] tracking-wide">
-                  PHONE SUPPORT
+                  Phone &amp; WhatsApp
                 </span>
                 <span className="flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5 text-[13.5px] font-bold text-[#0D3B2E] font-mono tabular-nums">
                   <span>{settings.phoneDisplay}</span>

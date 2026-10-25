@@ -43,7 +43,7 @@ export function WholesalePage() {
   } = useStore();
 
   useEffect(() => {
-    document.title = 'Wholesale Supply & Quote Request — Fresh Farm Vegetables Lahore';
+    document.title = 'Business Supply & Wholesale Rates — Fresh Farm Vegetables Lahore';
   }, []);
 
   const enabledProducts = products.filter((p) => p.enabled);
@@ -267,7 +267,7 @@ export function WholesalePage() {
             </div>
             <div>
               <p className="text-xs font-semibold text-[#0F5338]">Inquiry Recorded</p>
-              <h1 className="text-2xl sm:text-3xl font-bold text-[#202820]">
+              <h1 className="font-display text-3xl sm:text-4xl font-semibold text-[#202820]">
                 Quote Request Submitted
               </h1>
               <p className="text-sm text-[#687268] mt-1">
@@ -282,7 +282,7 @@ export function WholesalePage() {
           </p>
 
           <div className="p-4 rounded-2xl bg-[#F6F8F6] border border-[#E4EAE4]">
-            <h2 className="text-xs font-bold text-[#202820] mb-2">Requested Produce</h2>
+            <p className="text-xs font-sans font-bold text-[#202820] mb-2">Requested Produce</p>
             <ul className="space-y-1.5 text-sm">
               {submittedQuote.items.map((item, idx) => (
                 <li key={idx} className="flex justify-between">
@@ -322,13 +322,16 @@ export function WholesalePage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
       {/* Page Intro */}
       <div className="max-w-3xl">
-        <p className="text-xs sm:text-sm font-semibold text-[#12B326] mb-1.5">
-          Wholesale &amp; Daily Rate Inquiries · Lahore
+        <p className="font-signature text-2xl sm:text-[1.8rem] text-[#12B326] py-0.5">
+          Partnering with Professional Kitchens
         </p>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#202820] tracking-tight leading-[1.16]">
-          Request Today&apos;s Rates &amp; Wholesale Supply
+        <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#0F5338] mb-1">
+          Business Supply &amp; Daily Rate Inquiries · Lahore
+        </p>
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-[2.95rem] font-semibold text-[#202820] tracking-[-0.015em] leading-[1.1]">
+          Business Supply &amp; Wholesale Rates
         </h1>
-        <p className="text-sm sm:text-base text-[#687268] mt-2 leading-relaxed">
+        <p className="text-sm sm:text-base text-[#687268] mt-2.5 leading-relaxed">
           Fresh Farm Vegetables supplies restaurants, hotels, cafés, catering kitchens, and households across Lahore. Submit your multi-product requirement list below or connect with us directly on WhatsApp ({settings.whatsappIntl}).
         </p>
       </div>
@@ -376,10 +379,10 @@ export function WholesalePage() {
               </svg>
             </div>
             <div>
-              <h2 className="text-lg font-bold text-[#202820] leading-snug">
+              <h2 className="font-display text-xl sm:text-2xl font-semibold text-[#202820] leading-snug">
                 Commercial Kitchen Menu &amp; Yield Estimator
               </h2>
-              <p className="text-xs text-[#687268] mt-0.5">
+              <p className="text-xs sm:text-[13px] text-[#687268] mt-0.5">
                 Describe your menu items, guest covers, or prep schedule to calculate suggested quantities from our catalog.
               </p>
             </div>
@@ -461,8 +464,11 @@ export function WholesalePage() {
         className="bg-white rounded-3xl border border-[#E4EAE4] p-6 sm:p-10 space-y-8"
       >
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#202820]">
-            Wholesale &amp; Daily Rate Inquiry Form
+          <p className="font-signature text-2xl text-[#12B326] py-0.5">
+            Custom Multi-Item Quote
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[#202820] leading-[1.15]">
+            Business Supply &amp; Daily Rate Inquiry Form
           </h2>
           <p className="text-xs sm:text-sm text-[#687268] mt-1">
             Submit multiple vegetables in a single request. Our administrator responds with current PKR pricing before your order is finalized.

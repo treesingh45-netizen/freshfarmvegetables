@@ -152,7 +152,7 @@ export function OrderConfirmationPage({ reference }: { reference: string }) {
     return (
       <div className="max-w-xl mx-auto px-4 py-16 text-center space-y-4">
         <div className="bg-white rounded-3xl border border-[#DCE8DC] p-8 space-y-4">
-          <h1 className="text-xl font-bold text-[#18261B]">Order Lookup</h1>
+          <h1 className="text-2xl sm:text-3xl font-semibold text-[#18261B]">Order Lookup</h1>
           <p className="text-sm text-[#5A6B5D]">{error || 'Order not found.'}</p>
           <button
             type="button"
@@ -200,7 +200,7 @@ export function OrderConfirmationPage({ reference }: { reference: string }) {
               <p className="text-xs font-bold uppercase tracking-wider text-[#0F5338]">
                 Order Confirmation
               </p>
-              <h1 className="text-2xl sm:text-3xl font-bold text-[#18261B] tracking-tight mt-0.5">
+              <h1 className="text-3xl sm:text-4xl font-semibold text-[#18261B] mt-0.5">
                 Thank you, {order.contact.fullName}
               </h1>
               <p className="text-sm text-[#5A6B5D] mt-1">
@@ -319,9 +319,9 @@ export function OrderConfirmationPage({ reference }: { reference: string }) {
             onSubmit={handleSubmitProof}
             className="p-5 rounded-2xl bg-[#F4FAF5] border border-[#DCE8DC] space-y-4"
           >
-            <h2 className="text-sm font-bold text-[#18261B]">
+            <h3 className="text-sm font-bold text-[#18261B]">
               Submit or Update Payment Verification Proof
-            </h2>
+            </h3>
             {proofError && <p className="text-xs text-[#E4483D] font-medium">{proofError}</p>}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -400,7 +400,7 @@ export function OrderConfirmationPage({ reference }: { reference: string }) {
         {/* Submitted Payment Reference & Receipt Summary */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-[#E4ECE4] text-sm">
           <div className="space-y-1.5">
-            <h2 className="font-bold text-[#18261B]">Customer &amp; Delivery Address</h2>
+            <h3 className="text-sm font-bold text-[#18261B]">Customer &amp; Delivery Address</h3>
             <p className="text-[#4A5A4D] font-medium">{order.contact.fullName}</p>
             <p className="text-[#5A6B5D] font-mono text-xs">{order.contact.phone}</p>
             <p className="text-[#5A6B5D] text-xs">{order.contact.email}</p>
@@ -420,7 +420,7 @@ export function OrderConfirmationPage({ reference }: { reference: string }) {
           </div>
 
           <div className="space-y-2">
-            <h2 className="font-bold text-[#18261B]">Payment &amp; Reference Details</h2>
+            <h3 className="text-sm font-bold text-[#18261B]">Payment &amp; Reference Details</h3>
             <p className="text-xs text-[#4A5A4D]">
               <span className="text-[#5A6B5D]">Method:</span>{' '}
               <strong>{formatPaymentMethodLabel(order.paymentMethod, settings)}</strong>
@@ -462,7 +462,7 @@ export function OrderConfirmationPage({ reference }: { reference: string }) {
 
         {/* Ordered Items & PKR Breakdown */}
         <div className="pt-4 border-t border-[#E4ECE4]">
-          <h2 className="text-base font-bold text-[#18261B] mb-3">Ordered Produce</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold text-[#18261B] mb-3">Ordered Produce</h2>
           <ul className="divide-y divide-[#E4ECE4]">
             {order.items.map((item, idx) => (
               <li
@@ -519,7 +519,7 @@ export function OrderConfirmationPage({ reference }: { reference: string }) {
               <MessageCircle className="w-4 h-4 text-[#12B326]" />
               <span>WhatsApp Order Notification ({recipientWhatsApp})</span>
             </div>
-            <h2 className="text-lg font-bold text-[#18261B]">
+            <h2 className="text-xl sm:text-2xl font-semibold text-[#18261B]">
               {order.whatsappNotification?.deliveredAutomatically
                 ? 'Automatic WhatsApp Notification Sent'
                 : 'Send Your Prefilled Order Summary on WhatsApp'}
