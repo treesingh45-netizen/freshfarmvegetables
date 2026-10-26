@@ -1,7 +1,8 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
-import { DEFAULT_BUSINESS_SETTINGS, INITIAL_PRODUCTS } from '../src/data/catalogSeed';
+import { DEFAULT_BUSINESS_SETTINGS, INITIAL_PRODUCTS } from '../src/constants/catalogSeed';
 import {
   AuditLogEntry,
   BusinessSettings,
@@ -29,7 +30,9 @@ export interface DatabaseState {
   sessionSecret: string;
 }
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
+const DATA_DIR = process.env.VERCEL
+  ? path.join(os.tmpdir(), 'freshfarm-data')
+  : path.resolve(process.cwd(), 'data');
 const DB_FILE = path.join(DATA_DIR, 'freshfarm-store.json');
 
 export function hashPassword(password: string, salt?: string): { hash: string; salt: string } {
@@ -99,7 +102,12 @@ let cachedDb: DatabaseState | null = null;
 export function getDb(): DatabaseState {
   if (cachedDb) return cachedDb;
 
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+  try {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  } catch {
+    cachedDb = createInitialState();
+    return cachedDb;
+  }
   if (fs.existsSync(DB_FILE)) {
     try {
       const raw = fs.readFileSync(DB_FILE, 'utf-8');
@@ -183,10 +191,14 @@ export function getDb(): DatabaseState {
 
 export function saveDb(): void {
   if (!cachedDb) return;
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-  const tmpFile = `${DB_FILE}.tmp`;
-  fs.writeFileSync(tmpFile, JSON.stringify(cachedDb, null, 2), 'utf-8');
-  fs.renameSync(tmpFile, DB_FILE);
+  try {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    const tmpFile = `${DB_FILE}.tmp`;
+    fs.writeFileSync(tmpFile, JSON.stringify(cachedDb, null, 2), 'utf-8');
+    fs.renameSync(tmpFile, DB_FILE);
+  } catch {
+    // Keep state in memory if running on a read-only filesystem
+  }
 }
 
 export function appendAuditLog(actorEmail: string, action: string, details: string): void {

@@ -4,7 +4,7 @@ import {
   getVerifiedBusinessType,
   getVerifiedStarRating,
   sanitizeReviewQuote,
-} from '../data/reviewsData';
+} from '../constants/reviewsData';
 
 interface ClientReviewCardProps {
   review: ClientReviewItem;

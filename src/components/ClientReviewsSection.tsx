@@ -3,7 +3,7 @@ import {
   CLIENT_REVIEWS,
   ClientReviewItem,
   getApprovedClientReviews,
-} from '../data/reviewsData';
+} from '../constants/reviewsData';
 import { ClientReviewCard } from './ClientReviewCard';
 
 interface ClientReviewsSectionProps {

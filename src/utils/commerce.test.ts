@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { DEFAULT_BUSINESS_SETTINGS, INITIAL_PRODUCTS } from '../data/catalogSeed';
+import { DEFAULT_BUSINESS_SETTINGS, INITIAL_PRODUCTS } from '../constants/catalogSeed';
 import {
   CLIENT_REVIEWS,
   getApprovedClientReviews,
   getVerifiedBusinessType,
   getVerifiedStarRating,
   sanitizeReviewQuote,
-} from '../data/reviewsData';
+} from '../constants/reviewsData';
 import {
   buildMultiItemWhatsAppUrl,
   buildOrderWhatsAppUrl,

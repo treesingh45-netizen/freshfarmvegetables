@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { DEFAULT_BUSINESS_SETTINGS, INITIAL_PRODUCTS } from '../data/catalogSeed';
+import { DEFAULT_BUSINESS_SETTINGS, INITIAL_PRODUCTS } from '../constants/catalogSeed';
 import {
   BusinessSettings,
   CartItem,
